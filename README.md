@@ -1,0 +1,1 @@
+# guildbound-idle-web
