@@ -1,0 +1,196 @@
+/**
+ * Global styles — minimal application-shell layout built on design tokens.
+ * Component styles move to CSS Modules as screens become real.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1200px 500px at 50% -200px, rgb(227 154 59 / 0.07), transparent),
+    var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-size-body);
+  line-height: var(--line-height-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/* ---- Application shell ---- */
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: var(--layout-header-height);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.app-header-emblem {
+  font-size: var(--text-size-heading);
+}
+
+.app-title {
+  font-family: var(--font-display);
+  font-size: var(--text-size-heading);
+  font-weight: var(--text-weight-display);
+  line-height: var(--line-height-tight);
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+.app-tagline {
+  font-size: var(--text-size-label);
+  font-weight: var(--text-weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.app-content {
+  flex: 1;
+  width: 100%;
+  max-width: var(--layout-content-max-width);
+  margin-inline: auto;
+  padding: var(--space-4);
+}
+
+/* ---- Bottom navigation ---- */
+
+.bottom-nav {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  min-height: var(--layout-nav-height);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  box-shadow: var(--shadow-nav);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.bottom-nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  min-height: var(--touch-target-min);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.bottom-nav-link--active {
+  color: var(--color-accent);
+}
+
+.bottom-nav-icon {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.bottom-nav-label {
+  font-size: var(--text-size-label);
+  font-weight: var(--text-weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+/* ---- Placeholder screens (Phase 0) ---- */
+
+.page-placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-panel);
+}
+
+.page-placeholder-title {
+  font-family: var(--font-display);
+  font-size: var(--text-size-display);
+  font-weight: var(--text-weight-display);
+  line-height: var(--line-height-tight);
+}
+
+.page-placeholder-text {
+  color: var(--color-text-secondary);
+}
+
+.notfound-link {
+  color: var(--color-accent);
+  font-weight: var(--text-weight-semibold);
+}
+
+/* ---- Explore placeholder list ---- */
+
+.explore-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+
+.explore-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  min-height: var(--touch-target-min);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.explore-item-icon {
+  font-size: var(--text-size-heading);
+}
+
+.explore-item-name {
+  font-weight: var(--text-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+.explore-item-note {
+  font-size: var(--text-size-caption);
+  color: var(--color-text-secondary);
+}
+
+.explore-item-lock {
+  margin-left: auto;
+  opacity: 0.6;
+}

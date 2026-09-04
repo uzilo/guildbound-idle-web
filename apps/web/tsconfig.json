@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "types": ["vite/client"],
+    "noEmit": true,
+    "paths": {
+      "@guildbound/shared": ["../../packages/shared/src/index.ts"],
+      "@guildbound/game-core": ["../../packages/game-core/src/index.ts"],
+      "@guildbound/game-data": ["../../packages/game-data/src/index.ts"],
+      "@guildbound/game-simulation": ["../../packages/game-simulation/src/index.ts"]
+    }
+  },
+  "include": ["src"]
+}

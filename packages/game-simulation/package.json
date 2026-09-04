@@ -1,0 +1,30 @@
+{
+  "name": "@guildbound/game-simulation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Simulation systems: combat, expeditions, idle catch-up, dungeons, raids, tower. Depends on game-core and game-data only.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@guildbound/game-core": "workspace:*",
+    "@guildbound/game-data": "workspace:*",
+    "@guildbound/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3"
+  }
+}
